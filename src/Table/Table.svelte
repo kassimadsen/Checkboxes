@@ -1,4 +1,12 @@
 <script>
+	import {
+		Table,
+		TableBody,
+		TableBodyCell,
+		TableBodyRow,
+		TableHead,
+		TableHeadCell
+	} from 'flowbite-svelte';
 	let tally = [];
 	let count = 0;
 	function appendTally() {
@@ -7,12 +15,77 @@
 	}
 </script>
 
-<button id="tally" on:click={appendTally}>add another</button>
-<ol id="count">
-	{#each tally as i}
-		<li class="tally"></li>
-	{/each}
-</ol>
+<Table hoverable={true}>
+	<TableHead>
+		<TableHeadCell>Monday</TableHeadCell>
+		<TableHeadCell>Tuesday</TableHeadCell>
+		<TableHeadCell>Wednesday</TableHeadCell>
+		<TableHeadCell>Thursday</TableHeadCell>
+		<TableHeadCell>Friday</TableHeadCell>
+		<TableHeadCell>Saturday</TableHeadCell>
+		<TableHeadCell>Sunday</TableHeadCell>
+	</TableHead>
+	<TableBody tableBodyClass="divide-y">
+		<TableBodyRow>
+			<TableBodyCell>
+				<button id="tally" on:click={appendTally}>Add Tally</button>
+				<ol id="count">
+					{#each tally as i}
+						<li class="tally"></li>
+					{/each}
+				</ol>
+			</TableBodyCell>
+			<TableBodyCell>
+				<button id="tally" on:click={appendTally}>Add Tally</button>
+				<ol id="count">
+					{#each tally as i}
+						<li class="tally"></li>
+					{/each}
+				</ol>
+			</TableBodyCell>
+			<TableBodyCell>
+				<button id="tally" on:click={appendTally}>Add Tally</button>
+				<ol id="count">
+					{#each tally as i}
+						<li class="tally"></li>
+					{/each}
+				</ol>
+			</TableBodyCell>
+			<TableBodyCell>
+				<button id="tally" on:click={appendTally}>Add Tally</button>
+				<ol id="count">
+					{#each tally as i}
+						<li class="tally"></li>
+					{/each}
+				</ol>
+			</TableBodyCell>
+			<TableBodyCell>
+				<button id="tally" on:click={appendTally}>Add Tally</button>
+				<ol id="count">
+					{#each tally as i}
+						<li class="tally"></li>
+					{/each}
+				</ol>
+			</TableBodyCell>
+			<TableBodyCell>
+				<button id="tally" on:click={appendTally}>Add Tally</button>
+				<ol id="count">
+					{#each tally as i}
+						<li class="tally"></li>
+					{/each}
+				</ol>
+			</TableBodyCell>
+			<TableBodyCell>
+				<button id="tally" on:click={appendTally}>Add Tally</button>
+				<ol id="count">
+					{#each tally as i}
+						<li class="tally"></li>
+					{/each}
+				</ol>
+			</TableBodyCell>
+		</TableBodyRow>
+	</TableBody>
+</Table>
 
 <style>
 	li {
