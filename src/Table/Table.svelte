@@ -1,6 +1,7 @@
 <script>
 	import {
-	A,
+		Button,
+		Modal,
 		Table,
 		TableBody,
 		TableBodyCell,
@@ -8,6 +9,10 @@
 		TableHead,
 		TableHeadCell
 	} from 'flowbite-svelte';
+
+	import { ExclamationCircleOutline } from 'flowbite-svelte-icons';
+
+	let popupModal = false;
 	
 	let mondaytally = [];
 	let mondaycount = 0;
@@ -108,12 +113,21 @@
 		<TableBodyRow>
 			<TableBodyCell>
 				<button id="mondaytally" on:click={appendMondayTally}>Add Monday Tally</button>
+				<br>
 				<ol id="mondaycount">
 					{#each mondaytally as i}
 						<li class="monday"></li>
 					{/each}
 				</ol>
-				<button id="clearmonday" on:click={clearMondaysTallys}>Clear Monday's Tally's</button>
+				<button on:click={() => (popupModal = true)}>Clear Monday's Tally's</button>
+				<Modal bind:open={popupModal} size="xs" autoclose>
+					<div class="text-center">
+					  <ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
+					  <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to clear these tally's <br> for Monday?</h3>
+					  <Button id="clearmonday" color="red" class="me-2" on:click={clearMondaysTallys}>Yes, I'm sure</Button>
+					  <Button color="alternative">No, cancel</Button>
+					</div>
+				</Modal>
 			</TableBodyCell>
 			<TableBodyCell>
 				<button id="tuesdaytally" on:click={appendTuesdayTally}>Add Tuesday Tally</button>
