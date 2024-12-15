@@ -1,5 +1,6 @@
 <script>
 	import {
+	A,
 		Table,
 		TableBody,
 		TableBodyCell,
@@ -63,6 +64,34 @@
 		sundaytally.push(sundaycount++);
 		sundaytally = sundaytally;
 	}
+
+	function clearMondaysTallys() {
+		mondaytally.length = 0;
+	}
+
+	function clearTuesdaysTallys() {
+		tuesdaytally.length = 0;
+	}
+
+	function clearWednesdaysTallys() {
+		wednesdaytally.length = 0;
+	}
+
+	function clearThursdaysTallys() {
+		thursdaytally.length = 0;
+	}
+
+	function clearFridaysTallys() {
+		fridaytally.length = 0;
+	}
+
+	function clearSaturdaysTallys() {
+		saturdaytally.length = 0;
+	}
+
+	function clearSundaysTallys() {
+		sundaytally.length = 0;
+	}
 </script>
 
 <Table hoverable={true}>
@@ -84,6 +113,7 @@
 						<li class="monday"></li>
 					{/each}
 				</ol>
+				<button id="clearmonday" on:click={clearMondaysTallys}>Clear Monday's Tally's</button>
 			</TableBodyCell>
 			<TableBodyCell>
 				<button id="tuesdaytally" on:click={appendTuesdayTally}>Add Tuesday Tally</button>
@@ -92,6 +122,7 @@
 						<li class="tuesday"></li>
 					{/each}
 				</ol>
+				<button id="cleartuesday" on:click={clearTuesdaysTallys}>Clear Tuesday's Tally's</button>
 			</TableBodyCell>
 			<TableBodyCell>
 				<button id="wednesdaytally" on:click={appendWednesdayTally}>Add Wednesday Tally</button>
@@ -100,6 +131,7 @@
 						<li class="wednesday"></li>
 					{/each}
 				</ol>
+				<button id="clearwednesday" on:click={clearWednesdaysTallys}>Clear Wednesday's Tally's</button>
 			</TableBodyCell>
 			<TableBodyCell>
 				<button id="thursdaytally" on:click={appendThursdayTally}>Add Thursday Tally</button>
@@ -108,6 +140,7 @@
 						<li class="thursday"></li>
 					{/each}
 				</ol>
+				<button id="clearthursday" on:click={clearThursdaysTallys}>Clear Thursday's Tally's</button>
 			</TableBodyCell>
 			<TableBodyCell>
 				<button id="fridaytally" on:click={appendFridayTally}>Add Friday Tally</button>
@@ -116,6 +149,7 @@
 						<li class="friday"></li>
 					{/each}
 				</ol>
+				<button id="clearfriday" on:click={clearFridaysTallys}>Clear Friday's Tally's</button>
 			</TableBodyCell>
 			<TableBodyCell>
 				<button id="saturdaytally" on:click={appendSaturdayTally}>Add Saturday Tally</button>
@@ -124,6 +158,7 @@
 						<li class="saturday"></li>
 					{/each}
 				</ol>
+				<button id="clearsaturday" on:click={clearSaturdaysTallys}>Clear Saturday's Tally's</button>
 			</TableBodyCell>
 			<TableBodyCell>
 				<button id="sundaytally" on:click={appendSundayTally}>Add Sunday Tally</button>
@@ -132,6 +167,7 @@
 						<li class="sunday"></li>
 					{/each}
 				</ol>
+				<button id="clearsunday" on:click={clearSundaysTallys}>Clear Sunday's Tally's</button>
 			</TableBodyCell>
 		</TableBodyRow>
 	</TableBody>
