@@ -24,7 +24,7 @@
 	}
 </script>
 
-<TableBodyCell>
+<TableBodyCell id="tableBodyCell">
     <button id="add-tally" onclick={appendTally}>Add {day} Tally</button>
     <br>
     <ol id="count">
@@ -33,12 +33,12 @@
         {/each}
     </ol>
     <button id="clear-tally" onclick={() => (popupModal = true)}>Clear {day}'s Tally's</button>
-    <Modal bind:open={popupModal} size="xs" autoclose>
+    <Modal id="clear-modal" bind:open={popupModal} size="xs" autoclose>
         <div class="text-center">
           <ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
           <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to clear these tally's <br> for {day}?</h3>
-          <Button id="clearmonday" color="red" class="me-2" onclick={clearTallys}>Yes, I'm sure</Button>
-          <Button color="alternative">No, cancel</Button>
+          <Button id="clear{day}" color="red" class="me-2" onclick={clearTallys}>Yes, I'm sure</Button>
+          <Button id="cancel" color="alternative">No, cancel</Button>
         </div>
     </Modal>
 </TableBodyCell>

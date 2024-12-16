@@ -1,5 +1,5 @@
 <script>
-	import Checkbox from '../Checkbox/Checkbox.svelte';
+	import MainTable from "../Table/MainTable.svelte";
 </script>
 
-<Checkbox />
+<MainTable />
