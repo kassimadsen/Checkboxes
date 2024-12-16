@@ -1,5 +1,5 @@
 <script>
-	import MainTable from "../Table/MainTable.svelte";
+	import MainTable from "../Components/Table/MainTable.svelte";
 </script>
 
 <MainTable />
